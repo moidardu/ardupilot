@@ -78,9 +78,21 @@ public:
         angle(_angle), // angle in degrees from front
         yaw_factor(_yaw_factor), // positive is clockwise
         servo(_servo), // what servo output drives this motor
+        
         display_order(_display_order) // order for clockwise display
     {
 
+        position.x = cosf(radians(angle));
+        position.y =  sinf(radians(angle));
+        position.z = 0;
+
+        thrust_vector.x = 0;
+        thrust_vector.y = 0;
+        thrust_vector.z = -1;
+
+
+
+/*
     	if (_display_order ==1){ //motor 1
     	    position.x = 1;
         	position.y =  0.4;
@@ -192,7 +204,7 @@ public:
 
         	thrust_vector.z = -twist_angle_factor_cos;
         }
-
+*/
 
 
     
