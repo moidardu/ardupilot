@@ -184,9 +184,7 @@ void Motor::setup_params(uint16_t _pwm_min, uint16_t _pwm_max, float _spin_min, 
 
     if (!_position.is_zero()) {
         position = _position;
-    } else {//comment out position over-ride culprit
-        // position.x = cosf(radians(angle)) * _diagonal_size;
-        // position.y =  sinf(radians(angle)) * _diagonal_size;
+    } else {
         position.z = 0;
 
         if (angle == 22) //motor 1
@@ -231,7 +229,7 @@ void Motor::setup_params(uint16_t _pwm_min, uint16_t _pwm_max, float _spin_min, 
             position.y =  sinf(radians(angle)) * _diagonal_size;
         }
     }
-        
+
 
     if (!_thrust_vector.is_zero()) {
         thrust_vector = _thrust_vector;
