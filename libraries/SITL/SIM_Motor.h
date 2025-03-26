@@ -27,7 +27,8 @@ namespace SITL {
 /*
   class to describe a motor position
  */
-class Motor {
+class Motor 
+{
 public:
     float angle;
     float yaw_factor;
@@ -194,10 +195,10 @@ public:
 
 
 
-    }
+    
 
 
-/* commented out and redundant - didn't realise the coordinate system was NED. applied NED vectors to thrust vectors (as this was implemented after testing out in SITL, but positions were implemented without much thought or verification)
+        /* commented out and redundant - didn't realise the coordinate system was NED. applied NED vectors to thrust vectors (as this was implemented after testing out in SITL, but positions were implemented without much thought or verification)
     	if (_display_order ==1){
     	    position.x = -0.4;
         	position.y =  1;
@@ -313,10 +314,9 @@ public:
 
 
    */
-
+    }
     
     //alternative constructor for tiltable motors
-/*
 
 
     Motor(uint8_t _servo, float _angle, float _yaw_factor, uint8_t _display_order,
@@ -336,6 +336,7 @@ public:
 
   
     {
+        /*
 
         // No twist - direct force vector
         thrust_vector.x = 0;
@@ -444,12 +445,12 @@ public:
         	thrust_vector.y = 0;
         	thrust_vector.z = -twist_angle_factor_cos;
         }  
-   
+   */
+
     }
 
-*/
     
-    
+
 
     void calculate_forces(const struct sitl_input &input,
                           uint8_t motor_offset,

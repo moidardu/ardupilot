@@ -231,8 +231,7 @@ static Motor octa_motors[] =
 };
 */
 
-/*this is the REVERSED OCTA H - TEST TO MAKE SURE RADIAL VALUES OVERRIDED
-*/
+/*this is the REVERSED OCTA H - TEST TO MAKE SURE RADIAL VALUES OVERRIDED, well this causes chaos
 
 static Motor octa_motors[] =
 {
@@ -244,6 +243,25 @@ static Motor octa_motors[] =
     Motor(AP_MOTORS_MOT_6, -0,  AP_MOTORS_MATRIX_YAW_FACTOR_CW, 6),
     Motor(AP_MOTORS_MOT_7,  -0,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,  7),
     Motor(AP_MOTORS_MOT_8,   0,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,  3)
+};
+
+
+*/
+
+
+/*this is the REVERSED OCTA H - quasi realistic positions (angles correct, just that non-constant diagonal)
+*/
+
+static Motor octa_motors[] =
+{
+    Motor(AP_MOTORS_MOT_1,    22,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,  1),
+    Motor(AP_MOTORS_MOT_2,  -158,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,  5),
+    Motor(AP_MOTORS_MOT_3,   43,  AP_MOTORS_MATRIX_YAW_FACTOR_CW, 2),
+    Motor(AP_MOTORS_MOT_4,  158,  AP_MOTORS_MATRIX_YAW_FACTOR_CW, 4),
+    Motor(AP_MOTORS_MOT_5,  -22,  AP_MOTORS_MATRIX_YAW_FACTOR_CW, 8),
+    Motor(AP_MOTORS_MOT_6, -137,  AP_MOTORS_MATRIX_YAW_FACTOR_CW, 6),
+    Motor(AP_MOTORS_MOT_7,  -43,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,  7),
+    Motor(AP_MOTORS_MOT_8,   137,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,  3)
 };
 
 /*this is the WING OCTA H 
