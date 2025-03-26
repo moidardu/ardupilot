@@ -181,55 +181,14 @@ void Motor::setup_params(uint16_t _pwm_min, uint16_t _pwm_max, float _spin_min, 
     true_prop_area = _true_prop_area;
     momentum_drag_coefficient = _momentum_drag_coefficient;
     diagonal_size = _diagonal_size;
-
+    
     if (!_position.is_zero()) {
         position = _position;
     } else {
+        position.x = cosf(radians(angle)) * _diagonal_size;
+        position.y =  sinf(radians(angle)) * _diagonal_size;
         position.z = 0;
-
-        if (angle == 22) //motor 1
-        { 
-            position.x = cosf(radians(angle)) * _diagonal_size;
-            position.y =  sinf(radians(angle)) * _diagonal_size;
-        }
-
-        else if (angle == -158) //motor 2
-        {
-            position.x = cosf(radians(angle)) * _diagonal_size;
-            position.y =  sinf(radians(angle)) * _diagonal_size;
-        }
-        else if (angle == 43) //motor 3
-        {
-            position.x = cosf(radians(angle)) * _diagonal_size;
-            position.y =  sinf(radians(angle)) * _diagonal_size;
-        }
-        else if (angle == 158) //motor 4
-        {
-            position.x = cosf(radians(angle)) * _diagonal_size;
-            position.y =  sinf(radians(angle)) * _diagonal_size;
-        }
-        else if (angle == -22) //motor 5
-        {
-            position.x = cosf(radians(angle)) * _diagonal_size;
-            position.y =  sinf(radians(angle)) * _diagonal_size;
-        }
-        else if (angle == -137) //motor 6
-        {
-            position.x = cosf(radians(angle)) * _diagonal_size;
-            position.y =  sinf(radians(angle)) * _diagonal_size;
-        }
-        else if (angle == -43) //motor 7
-        {
-            position.x = cosf(radians(angle)) * _diagonal_size;
-            position.y =  sinf(radians(angle)) * _diagonal_size;
-        }
-        else if (angle == 137) //motor 8
-        {
-            position.x = cosf(radians(angle)) * _diagonal_size;
-            position.y =  sinf(radians(angle)) * _diagonal_size;
-        }
     }
-
 
     if (!_thrust_vector.is_zero()) {
         thrust_vector = _thrust_vector;
