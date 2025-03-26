@@ -23,7 +23,7 @@
 
 namespace SITL {
 //random comment to check git
-//log 105
+//log 106
 /*
   class to describe a motor position
  */
