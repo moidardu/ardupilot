@@ -22,6 +22,7 @@
 #include <SITL/SITL_Input.h>
 
 namespace SITL {
+//random comment to check git
 
 /*
   class to describe a motor position
