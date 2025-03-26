@@ -23,7 +23,7 @@
 
 namespace SITL {
 //random comment to check git
-
+//log 105
 /*
   class to describe a motor position
  */
@@ -450,7 +450,6 @@ public:
     }
 
     
-
 
     void calculate_forces(const struct sitl_input &input,
                           uint8_t motor_offset,
