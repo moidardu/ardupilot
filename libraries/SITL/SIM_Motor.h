@@ -82,8 +82,8 @@ public:
         display_order(_display_order) // order for clockwise display
     {
 
-        position.x = cosf(radians(angle));
-        position.y =  sinf(radians(angle));
+        position.x = cosf(radians(angle*0.1));
+        position.y =  sinf(radians(angle*0.1));
         position.z = 0;
 
         thrust_vector.x = 0;
