@@ -188,8 +188,8 @@ void Motor::setup_params(uint16_t _pwm_min, uint16_t _pwm_max, float _spin_min, 
         
         if (int(angle) == 220) //motor 1
         {
-            position.x = cosf(radians(angle)) * _diagonal_size;
-            position.y =  sinf(radians(angle)) * _diagonal_size;
+            position.x = cosf(radians(angle*0.1)) * _diagonal_size;
+            position.y =  sinf(radians(angle*0.1)) * _diagonal_size;
         }
  
  
