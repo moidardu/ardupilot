@@ -88,7 +88,7 @@ public:
 
         thrust_vector.x = 0;
         thrust_vector.y = 0;
-        thrust_vector.z = -1;
+        thrust_vector.z = -0.999;
 
 
 
