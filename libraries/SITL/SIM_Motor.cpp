@@ -186,52 +186,66 @@ void Motor::setup_params(uint16_t _pwm_min, uint16_t _pwm_max, float _spin_min, 
         position = _position;
     } else {
         
-        if (int(angle) == 220) //motor 1
+        if (int(angle) == 1) //motor 1
         {
-            position.x = cosf(radians(angle*0.1)) * _diagonal_size;
-            position.y =  sinf(radians(angle*0.1)) * _diagonal_size;
+            position.x = 1;
+        	position.y =  0.4;
+        	position.z = 0;
         }
  
  
-        else if (int(angle) == -1580) //motor 2
+        else if (int(angle) == 2) //motor 2
         {
-            position.x = cosf(radians(-158)) * _diagonal_size;
-            position.y =  sinf(radians(-158)) * _diagonal_size;
+    	    position.x = -1;
+        	position.y =  -0.4;
+        	position.z = 0;
         }
-        else if (int(angle) == 430)//motor 3
+        else if (int(angle) == 3)//motor 3
         {
-            position.x = cosf(radians(43)) * _diagonal_size;
-            position.y =  sinf(radians(43)) * _diagonal_size;
+    	    position.x = 0.43;
+        	position.y =  0.4;
+        	position.z = 0;
         }
-        else if (int(angle) == 1580) //motor 4
+        else if (int(angle) == 4) //motor 4
         {
-            position.x = cosf(radians(158)) * _diagonal_size;
-            position.y =  sinf(radians(158)) * _diagonal_size;
+    	    position.x = -1;
+        	position.y = 0.4;
+        	position.z = 0;
         }
-        else if (int(angle) == -220) //motor 5
+        else if (int(angle) == 5) //motor 5
         {
-            position.x = cosf(radians(-22)) * _diagonal_size;
-            position.y =  sinf(radians(-22)) * _diagonal_size;
+    	    position.x = 1;
+        	position.y =  -0.4;
+        	position.z = 0;
         }
-        else if (int(angle) == -1370) //motor 6
+        else if (int(angle) == 6) //motor 6
         {
-            position.x = cosf(radians(-137)) * _diagonal_size;
-            position.y =  sinf(radians(-137)) * _diagonal_size;
+    	    position.x = -0.43;
+        	position.y =  -0.4;
+        	position.z = 0;
         }
-        else if (int(angle) == -430) //motor 7
+        else if (int(angle) == 7) //motor 7
         {
-            position.x = cosf(radians(-43)) * _diagonal_size;
-            position.y =  sinf(radians(-43)) * _diagonal_size;
+    	    position.x = 0.43;
+        	position.y =  -0.4;
+        	position.z = 0;
         }
-        else if(int(angle) == 1370) //motor 8
+        else if(int(angle) == 8) //motor 8
         {
-            position.x = cosf(radians(137)) * _diagonal_size;
-            position.y =  sinf(radians(137)) * _diagonal_size;
+    	    position.x = -0.43;
+        	position.y =  0.4;
+        	position.z = 0;
+
         }
         position.z = 0;
  
         
     }
+
+    position.x = position.x *_diagonal_size;
+    position.y = position.y *_diagonal_size;
+    position.z = position.z *_diagonal_size;
+
 
     if (!_thrust_vector.is_zero()) {
         thrust_vector = _thrust_vector;

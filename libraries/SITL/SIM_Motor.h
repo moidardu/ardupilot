@@ -82,17 +82,17 @@ public:
         display_order(_display_order) // order for clockwise display
     {
 
-        position.x = cosf(radians(angle*0.1));
-        position.y =  sinf(radians(angle*0.1));
-        position.z = 0;
+        // position.x = cosf(radians(angle*0.1));
+        // position.y =  sinf(radians(angle*0.1));
+        // position.z = 0;
 
-        thrust_vector.x = 0;
-        thrust_vector.y = 0;
-        thrust_vector.z = -0.999;
+        // thrust_vector.x = 0;
+        // thrust_vector.y = 0;
+        // thrust_vector.z = -0.999;
 
 
 
-/*
+// /*
     	if (_display_order ==1){ //motor 1
     	    position.x = 1;
         	position.y =  0.4;
@@ -204,7 +204,7 @@ public:
 
         	thrust_vector.z = -twist_angle_factor_cos;
         }
-*/
+// */
 
 
     
