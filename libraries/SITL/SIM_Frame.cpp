@@ -184,6 +184,7 @@ static Motor hexa_cw_x_motors[] =
     Motor(AP_MOTORS_MOT_5,  -90, AP_MOTORS_MATRIX_YAW_FACTOR_CCW, 5),
     Motor(AP_MOTORS_MOT_6,  -30, AP_MOTORS_MATRIX_YAW_FACTOR_CW,  6)
 };
+/* this is the CLASSIC OCTA H
 
 static Motor octa_motors[] =
 {
@@ -196,6 +197,70 @@ static Motor octa_motors[] =
     Motor(AP_MOTORS_MOT_7,  -90,  AP_MOTORS_MATRIX_YAW_FACTOR_CW,  7),
     Motor(AP_MOTORS_MOT_8,   90,  AP_MOTORS_MATRIX_YAW_FACTOR_CW,  3)
 };
+
+*/
+/* this is the CLASSIC OCTA H - change the yaw factor in SIM to match emperical results. front right boom goes down
+
+
+static Motor octa_motors[] =
+{
+    Motor(AP_MOTORS_MOT_1,    0,  AP_MOTORS_MATRIX_YAW_FACTOR_CW,  1), //right
+    Motor(AP_MOTORS_MOT_2,  180,  AP_MOTORS_MATRIX_YAW_FACTOR_CW,  5), //left 
+    Motor(AP_MOTORS_MOT_3,   45,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW, 2), //right 
+    Motor(AP_MOTORS_MOT_4,  135,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW, 4), //right
+    Motor(AP_MOTORS_MOT_5,  -45,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW, 8), //left
+    Motor(AP_MOTORS_MOT_6, -135,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW, 6), //left
+    Motor(AP_MOTORS_MOT_7,  -90,  AP_MOTORS_MATRIX_YAW_FACTOR_CW,  7), //left
+    Motor(AP_MOTORS_MOT_8,   90,  AP_MOTORS_MATRIX_YAW_FACTOR_CW,  3)  //rigth
+};
+                    */
+
+
+/*this is the REVERSED OCTA H 
+
+static Motor octa_motors[] =
+{
+    Motor(AP_MOTORS_MOT_1,    0,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,  1),
+    Motor(AP_MOTORS_MOT_2,  180,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,  5),
+    Motor(AP_MOTORS_MOT_3,   45,  AP_MOTORS_MATRIX_YAW_FACTOR_CW, 2),
+    Motor(AP_MOTORS_MOT_4,  135,  AP_MOTORS_MATRIX_YAW_FACTOR_CW, 4),
+    Motor(AP_MOTORS_MOT_5,  -45,  AP_MOTORS_MATRIX_YAW_FACTOR_CW, 8),
+    Motor(AP_MOTORS_MOT_6, -135,  AP_MOTORS_MATRIX_YAW_FACTOR_CW, 6),
+    Motor(AP_MOTORS_MOT_7,  -90,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,  7),
+    Motor(AP_MOTORS_MOT_8,   90,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,  3)
+};
+*/
+
+/*this is the REVERSED OCTA H - TEST TO MAKE SURE RADIAL VALUES OVERRIDED
+*/
+
+static Motor octa_motors[] =
+{
+    Motor(AP_MOTORS_MOT_1,    0,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,  1),
+    Motor(AP_MOTORS_MOT_2,  0,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,  5),
+    Motor(AP_MOTORS_MOT_3,   0,  AP_MOTORS_MATRIX_YAW_FACTOR_CW, 2),
+    Motor(AP_MOTORS_MOT_4,  0,  AP_MOTORS_MATRIX_YAW_FACTOR_CW, 4),
+    Motor(AP_MOTORS_MOT_5,  -0,  AP_MOTORS_MATRIX_YAW_FACTOR_CW, 8),
+    Motor(AP_MOTORS_MOT_6, -0,  AP_MOTORS_MATRIX_YAW_FACTOR_CW, 6),
+    Motor(AP_MOTORS_MOT_7,  -0,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,  7),
+    Motor(AP_MOTORS_MOT_8,   0,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,  3)
+};
+
+/*this is the WING OCTA H 
+
+static Motor octa_motors[] =
+{
+    Motor(AP_MOTORS_MOT_1,    0,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,  1),
+    Motor(AP_MOTORS_MOT_2,  180,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,  5),
+    Motor(AP_MOTORS_MOT_3,   45,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW, 2),
+    Motor(AP_MOTORS_MOT_4,  135,  AP_MOTORS_MATRIX_YAW_FACTOR_CW, 4),
+    Motor(AP_MOTORS_MOT_5,  -45,  AP_MOTORS_MATRIX_YAW_FACTOR_CW, 8),
+    Motor(AP_MOTORS_MOT_6, -135,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW, 6),
+    Motor(AP_MOTORS_MOT_7,  -90,  AP_MOTORS_MATRIX_YAW_FACTOR_CW,  7),
+    Motor(AP_MOTORS_MOT_8,   90,  AP_MOTORS_MATRIX_YAW_FACTOR_CW,  3)
+};
+*/
+
 
 static Motor octa_dji_x_motors[] =
 {
@@ -373,6 +438,19 @@ static Motor firefly_motors[] =
     Motor(AP_MOTORS_MOT_6, -60, AP_MOTORS_MATRIX_YAW_FACTOR_CW,  6, -1, 0, 0, 6, 0, -90)
 };
 
+static Motor octo_h_motors[] =
+{
+    Motor(AP_MOTORS_MOT_1,    0,  AP_MOTORS_MATRIX_YAW_FACTOR_CW,  1),
+    Motor(AP_MOTORS_MOT_2,  180,  AP_MOTORS_MATRIX_YAW_FACTOR_CW,  5),
+    Motor(AP_MOTORS_MOT_3,   45,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW, 2),
+    Motor(AP_MOTORS_MOT_4,  135,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW, 4),
+    Motor(AP_MOTORS_MOT_5,  -45,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW, 8),
+    Motor(AP_MOTORS_MOT_6, -135,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW, 6),
+    Motor(AP_MOTORS_MOT_7,  -90,  AP_MOTORS_MATRIX_YAW_FACTOR_CW,  7),
+    Motor(AP_MOTORS_MOT_8,   90,  AP_MOTORS_MATRIX_YAW_FACTOR_CW,  3)
+};
+
+
 /*
   table of supported frame types. String order is important for
   partial name matching
@@ -410,7 +488,9 @@ static Frame supported_frames[] =
     Frame("tilttri",   3, tilttri_motors),
     Frame("y6",        6, y6_motors),
     Frame("firefly",   6, firefly_motors),
+    Frame("octoplane", 8, octo_h_motors),
     Frame("tilt",      4, tiltquad),
+    
 };
 
 // get air density in kg/m^3

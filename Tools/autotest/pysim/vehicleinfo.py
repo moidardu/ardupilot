@@ -303,8 +303,13 @@ class VehicleInfo(object):
             },
             "quadplane": {
                 "waf_target": "bin/arduplane",
-                "default_params_filename": "default_params/quadplane.parm",
+                "default_params_filename": "default_params/quadplane.parm",            
             },
+            "octoplane": {
+                "waf_target": "bin/arduplane",
+                "default_params_filename": "default_params/octoplane.parm",            
+            },            
+            
             "quadplane-ice": {
                 "waf_target": "bin/arduplane",
                 "default_params_filename": ["default_params/quadplane.parm", "default_params/plane-ice.parm", "default_params/quadplane-ice.parm"],

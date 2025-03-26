@@ -32,6 +32,33 @@ public:
     float yaw_factor;
     uint8_t servo;
     uint8_t display_order;
+    float twist_angle_factor_cos = 0.999; //twist factor for 2 degrees
+    float twist_angle_factor_sin = 0.0; //twist factor for 0 degrees
+
+    //float twist_angle_factor_sin = 0.035; //twist factor for 2 degrees
+    //float twist_angle_factor_sin = 0.021; //twist factor for 1.2 degrees
+    //float twist_angle_factor_sin = 0.026; //twist factor for 1.5 degrees
+    // float twist_angle_factor_sin = 0.005; //twist factor for 0.3 degrees
+
+    // float twist_angle_factor_sin = 0.044; //twist factor for 2.5 degrees, AFTER convergence - octa H no motor angle, M1 loss
+    // float twist_angle_factor_sin = 0.026; //twist factor for 1.5 degrees, PRE convergence - octa H no motor angle, M3 loss
+    // float twist_angle_factor_sin = 0.025; //twist factor for 1.5 degrees, AFTER convergence - octa H 3/6 motor angle, M3 loss
+
+    // float twist_angle_factor_sin = 0.027; //twist factor for 1.5 degrees, AFTER convergence - reverse H no motor angle, M1 loss
+    // float twist_angle_factor_sin = 0.02; //twist factor for 1.1 degrees, PRE convergence - reverse H no motor angle, M1 loss
+
+
+
+
+
+    float motor_angle_factor = 0.00; // ~ 0 degree motor angled in/out
+    
+    // float motor_angle_factor = 0.05; // ~ 3 degree motor angled in/out, multiple of 2 for 6 deg
+    float motor_angle_multiplier = 0.43;
+    //float motor_angle_factor = 0.17; // ~ 10 degree motor angled in/out, multiple of 2 for 20 deg
+
+    //twist_angle  = twist_angle_deg*3.14159/180;
+   
 
     // support for tilting motors
     int8_t roll_servo = -1;
@@ -51,18 +78,246 @@ public:
         servo(_servo), // what servo output drives this motor
         display_order(_display_order) // order for clockwise display
     {
-        position.x = cosf(radians(angle));
-        position.y =  sinf(radians(angle));
-        position.z = 0;
 
-        thrust_vector.x = 0;
-        thrust_vector.y = 0;
-        thrust_vector.z = -1;
+    	if (_display_order ==1){ //motor 1
+    	    position.x = 1;
+        	position.y =  0.4;
+        	position.z = 0;
+
+        	thrust_vector.x = twist_angle_factor_sin;
+
+        	// thrust_vector.y = -motor_angle_factor; // H normal motor angle
+        	thrust_vector.y = motor_angle_factor; // H reveresed motor angle
+            // thrust_vector.y = motor_angle_factor; // H wing motor angle
+
+        	thrust_vector.z = -twist_angle_factor_cos;
+        }
+        
+    	else if (_display_order ==5){ //motor 2
+    	    position.x = -1;
+        	position.y =  -0.4;
+        	position.z = 0;
+
+            thrust_vector.x = -twist_angle_factor_sin;
+
+        	// thrust_vector.y = motor_angle_factor;// H normal motor angle
+        	thrust_vector.y = -motor_angle_factor; // H reveresed motor angle
+            // thrust_vector.y = -motor_angle_factor; // H wing motor angle
+
+        	thrust_vector.z = -twist_angle_factor_cos;
+        }
+        
+        else if (_display_order ==2){ //motor 3
+    	    position.x = 0.43;
+        	position.y =  0.4;
+        	position.z = 0;
+
+            thrust_vector.x = twist_angle_factor_sin;
+
+        	// thrust_vector.y = 2*motor_angle_factor;// H normal motor angle
+        	thrust_vector.y = -motor_angle_multiplier*motor_angle_factor; // H reveresed motor angle
+            // thrust_vector.y = 2*motor_angle_factor; // H wing motor angle
+
+        	thrust_vector.z = -twist_angle_factor_cos;
+        }
+        
+        else if (_display_order ==4){ //motor 4
+    	    position.x = -1;
+        	position.y = 0.4;
+        	position.z = 0;
+
+            thrust_vector.x = twist_angle_factor_sin;
+
+        	// thrust_vector.y = -motor_angle_factor;// H normal motor angle
+        	thrust_vector.y = motor_angle_factor; // H reveresed motor angle
+            // thrust_vector.y = motor_angle_factor; // H wing motor angle
+
+        	thrust_vector.z = -twist_angle_factor_cos;
+        }
+        
+        else if (_display_order ==8){ //motor 5
+    	    position.x = 1;
+        	position.y =  -0.4;
+        	position.z = 0;
+
+            thrust_vector.x = -twist_angle_factor_sin;
+
+        	// thrust_vector.y = motor_angle_factor;// H normal motor angle
+        	thrust_vector.y = -motor_angle_factor; // H reveresed motor angle
+            // thrust_vector.y = -motor_angle_factor; // H wing motor angle
+
+        	thrust_vector.z = -twist_angle_factor_cos;
+        }
+        
+        else if (_display_order ==6){ //motor 6
+    	    position.x = -0.43;
+        	position.y =  -0.4;
+        	position.z = 0;
+
+            thrust_vector.x = -twist_angle_factor_sin;
+
+        	// thrust_vector.y = -2*motor_angle_factor;// H normal motor angle
+        	thrust_vector.y = motor_angle_multiplier*motor_angle_factor; // H reveresed motor angle
+            // thrust_vector.y = -2*motor_angle_factor; // H wing motor angle
+
+        	thrust_vector.z = -twist_angle_factor_cos;
+        }
+        
+        else if (_display_order ==7){ //motor 7
+    	    position.x = 0.43;
+        	position.y =  -0.4;
+        	position.z = 0;
+
+            thrust_vector.x = -twist_angle_factor_sin;
+
+        	// thrust_vector.y = -2*motor_angle_factor;// H normal motor angle
+            thrust_vector.y = motor_angle_multiplier*motor_angle_factor; // H reveresed motor angle
+            // thrust_vector.y = -2*motor_angle_factor; // H wing motor angle
+
+        	thrust_vector.z = -twist_angle_factor_cos;
+        }
+        
+        else { //motor 8
+    	    position.x = -0.43;
+        	position.y =  0.4;
+        	position.z = 0;
+
+            thrust_vector.x = twist_angle_factor_sin;
+
+        	// thrust_vector.y = 2*motor_angle_factor;// H normal motor angle
+            thrust_vector.y = -motor_angle_multiplier*motor_angle_factor; // H reveresed motor angle/
+            // thrust_vector.y = 2*motor_angle_factor; // H wing motor angle/
+
+        	thrust_vector.z = -twist_angle_factor_cos;
+        }
+
+
+
     }
 
-    /*
-      alternative constructor for tiltable motors
-     */
+
+/* commented out and redundant - didn't realise the coordinate system was NED. applied NED vectors to thrust vectors (as this was implemented after testing out in SITL, but positions were implemented without much thought or verification)
+    	if (_display_order ==1){
+    	    position.x = -0.4;
+        	position.y =  1;
+        	position.z = 0;
+
+        	thrust_vector.x = twist_angle_factor_sin;
+
+        	// thrust_vector.y = -motor_angle_factor; // H normal motor angle
+        	thrust_vector.y = motor_angle_factor; // H reveresed motor angle
+            // thrust_vector.y = motor_angle_factor; // H wing motor angle
+
+        	thrust_vector.z = -twist_angle_factor_cos;
+        }
+        
+    	else if (_display_order ==5){
+    	    position.x = 0.4;
+        	position.y =  -1;
+        	position.z = 0;
+
+            thrust_vector.x = -twist_angle_factor_sin;
+
+        	// thrust_vector.y = motor_angle_factor;// H normal motor angle
+        	thrust_vector.y = -motor_angle_factor; // H reveresed motor angle
+            // thrust_vector.y = -motor_angle_factor; // H wing motor angle
+
+        	thrust_vector.z = -twist_angle_factor_cos;
+        }
+        
+        else if (_display_order ==2){
+    	    position.x = -0.4;
+        	position.y =  0.43;
+        	position.z = 0;
+
+            thrust_vector.x = twist_angle_factor_sin;
+
+        	// thrust_vector.y = 2*motor_angle_factor;// H normal motor angle
+        	thrust_vector.y = -1*motor_angle_factor; // H reveresed motor angle
+            // thrust_vector.y = 2*motor_angle_factor; // H wing motor angle
+
+        	thrust_vector.z = -twist_angle_factor_cos;
+        }
+        
+        else if (_display_order ==4){
+    	    position.x = -0.4;
+        	position.y = -1;
+        	position.z = 0;
+
+            thrust_vector.x = twist_angle_factor_sin;
+
+        	// thrust_vector.y = -motor_angle_factor;// H normal motor angle
+        	thrust_vector.y = motor_angle_factor; // H reveresed motor angle
+            // thrust_vector.y = motor_angle_factor; // H wing motor angle
+
+        	thrust_vector.z = -twist_angle_factor_cos;
+        }
+        
+        else if (_display_order ==8){
+    	    position.x = 0.4;
+        	position.y =  1;
+        	position.z = 0;
+
+            thrust_vector.x = -twist_angle_factor_sin;
+
+        	// thrust_vector.y = motor_angle_factor;// H normal motor angle
+        	thrust_vector.y = -motor_angle_factor; // H reveresed motor angle
+            // thrust_vector.y = -motor_angle_factor; // H wing motor angle
+
+        	thrust_vector.z = -twist_angle_factor_cos;
+        }
+        
+        else if (_display_order ==6){
+    	    position.x = 0.4;
+        	position.y =  -0.43;
+        	position.z = 0;
+
+            thrust_vector.x = -twist_angle_factor_sin;
+
+        	// thrust_vector.y = -2*motor_angle_factor;// H normal motor angle
+        	thrust_vector.y = 1*motor_angle_factor; // H reveresed motor angle
+            // thrust_vector.y = -2*motor_angle_factor; // H wing motor angle
+
+        	thrust_vector.z = -twist_angle_factor_cos;
+        }
+        
+        else if (_display_order ==7){
+    	    position.x = 0.4;
+        	position.y =  0.43;
+        	position.z = 0;
+
+            thrust_vector.x = -twist_angle_factor_sin;
+
+        	// thrust_vector.y = -2*motor_angle_factor;// H normal motor angle
+            thrust_vector.y = motor_angle_factor; // H reveresed motor angle
+            // thrust_vector.y = -2*motor_angle_factor; // H wing motor angle
+
+        	thrust_vector.z = -twist_angle_factor_cos;
+        }
+        
+        else {
+    	    position.x = -0.4;
+        	position.y =  -0.43;
+        	position.z = 0;
+
+            thrust_vector.x = twist_angle_factor_sin;
+
+        	// thrust_vector.y = 2*motor_angle_factor;// H normal motor angle
+            thrust_vector.y = -motor_angle_factor; // H reveresed motor angle/
+            // thrust_vector.y = 2*motor_angle_factor; // H wing motor angle/
+
+        	thrust_vector.z = -twist_angle_factor_cos;
+        }
+
+
+
+   */
+
+    
+    //alternative constructor for tiltable motors
+/*
+
+
     Motor(uint8_t _servo, float _angle, float _yaw_factor, uint8_t _display_order,
           int8_t _roll_servo, float _roll_min, float _roll_max,
           int8_t _pitch_servo, float _pitch_min, float _pitch_max) :
@@ -76,15 +331,124 @@ public:
         pitch_servo(_pitch_servo),
         pitch_min(_pitch_min),
         pitch_max(_pitch_max)
-    {
-        position.x = cosf(radians(angle));
-        position.y =  sinf(radians(angle));
-        position.z = 0;
+  
 
+  
+    {
+
+        // No twist - direct force vector
         thrust_vector.x = 0;
         thrust_vector.y = 0;
         thrust_vector.z = -1;
+
+    	if (_display_order ==1){
+    	    position.x = -0.4;
+        	position.y =  1;
+        	position.z = 0;
+        }
+        
+    	else if (_display_order ==5){
+    	    position.x = 0.4;
+        	position.y =  1;
+        	position.z = 0;
+        }
+        
+        else if (_display_order ==2){
+    	    position.x = -0.4;
+        	position.y =  0.43;
+        	position.z = 0;
+        }
+        
+        else if (_display_order ==4){
+    	    position.x = -0.4;
+        	position.y = -1;
+        	position.z = 0;
+        }
+        
+        else if (_display_order ==8){
+    	    position.x = 0.4;
+        	position.y =  1;
+        	position.z = 0;
+        }
+        
+        else if (_display_order ==6){
+    	    position.x = 0.4;
+        	position.y =  -0.43;
+        	position.z = 0;
+        }
+        
+        else if (_display_order ==7){
+    	    position.x = 0.4;
+        	position.y =  0.43;
+        	position.z = 0;
+        }
+        
+        else {
+    	    position.x = -0.4;
+        	position.y =  -0.43;
+        	position.z = 0;
+        }
+
+        
+        
+             
+  
+  
+  
+       /* twist angle interplay 
+    	if (_display_order ==1){
+        	thrust_vector.x = twist_angle_factor_sin;
+        	thrust_vector.y = 1;
+        	thrust_vector.z = -twist_angle_factor_cos;
+        }
+        
+    	else if (_display_order ==5){
+        	thrust_vector.x = -twist_angle_factor_sin;
+        	thrust_vector.y = 0;
+        	thrust_vector.z = -twist_angle_factor_cos;
+        }
+        
+        else if (_display_order ==2){
+        	thrust_vector.x = twist_angle_factor_sin;
+        	thrust_vector.y = 0;
+        	thrust_vector.z = -twist_angle_factor_cos;
+        }
+        
+        else if (_display_order ==4){
+        	thrust_vector.x = twist_angle_factor_sin;
+        	thrust_vector.y = 0;
+        	thrust_vector.z = -twist_angle_factor_cos;
+        }
+        
+        else if (_display_order ==8){
+        	thrust_vector.x = twist_angle_factor_sin;
+        	thrust_vector.y = 0;
+        	thrust_vector.z = -twist_angle_factor_cos;
+        }
+        
+        else if (_display_order ==6){
+        	thrust_vector.x = -twist_angle_factor_sin;
+        	thrust_vector.y = 0;
+        	thrust_vector.z = -twist_angle_factor_cos;
+        }
+        
+        else if (_display_order ==7){
+        	thrust_vector.x = -twist_angle_factor_sin;
+        	thrust_vector.y = 0;
+        	thrust_vector.z = -twist_angle_factor_cos;
+        }
+        
+        else {
+        	thrust_vector.x = -twist_angle_factor_sin;
+        	thrust_vector.y = 0;
+        	thrust_vector.z = -twist_angle_factor_cos;
+        }  
+   
     }
+
+*/
+    
+    
 
     void calculate_forces(const struct sitl_input &input,
                           uint8_t motor_offset,
