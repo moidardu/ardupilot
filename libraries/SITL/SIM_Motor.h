@@ -37,7 +37,7 @@ public:
     float twist_angle_factor_cos = 0.999; //twist factor for 2 degrees
     // float twist_angle_factor_sin = 0.0; //twist factor for 0 degrees
 
-    float twist_angle_factor_sin = 0.035; //twist factor for 2 degrees
+    // float twist_angle_factor_sin = 0.035; //twist factor for 2 degrees
     //float twist_angle_factor_sin = 0.021; //twist factor for 1.2 degrees
     //float twist_angle_factor_sin = 0.026; //twist factor for 1.5 degrees
     // float twist_angle_factor_sin = 0.005; //twist factor for 0.3 degrees
@@ -49,6 +49,8 @@ public:
     // float twist_angle_factor_sin = 0.027; //twist factor for 1.5 degrees, AFTER convergence - reverse H no motor angle, M1 loss
     // float twist_angle_factor_sin = 0.02; //twist factor for 1.1 degrees, PRE convergence - reverse H no motor angle, M1 loss
 
+    // reveresed H octa values:
+    float twist_angle_factor_sin = 0.033; //twist factor for 2 degrees
 
 
 
