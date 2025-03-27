@@ -35,7 +35,7 @@ public:
     uint8_t servo;
     uint8_t display_order;
     float twist_angle_factor_cos = 0.999; //twist factor for 2 degrees
-    float twist_angle_factor_sin = 0.0; //twist factor for 0 degrees
+    // float twist_angle_factor_sin = 0.0; //twist factor for 0 degrees
 
     // float twist_angle_factor_sin = 0.035; //twist factor for 2 degrees
     //float twist_angle_factor_sin = 0.021; //twist factor for 1.2 degrees
@@ -50,8 +50,7 @@ public:
     // float twist_angle_factor_sin = 0.02; //twist factor for 1.1 degrees, PRE convergence - reverse H no motor angle, M1 loss
 
     // reveresed H octa values:
-    // float twist_angle_factor_sin = 0.017; //twist factor for 2 degrees
-
+    float twist_angle_factor_sin = 0.028; //twist factor for iterations
 
 
 
@@ -132,7 +131,7 @@ public:
 
             thrust_vector.x = twist_angle_factor_sin;
 
-        	thrust_vector.y = 2*motor_angle_factor;// H normal motor angle
+        	thrust_vector.y = motor_angle_multiplier*motor_angle_factor;// H normal motor angle
         	// thrust_vector.y = -motor_angle_multiplier*motor_angle_factor; // H reveresed motor angle
             // thrust_vector.y = 2*motor_angle_factor; // H wing motor angle
 
@@ -174,7 +173,7 @@ public:
 
             thrust_vector.x = -twist_angle_factor_sin;
 // 
-        	thrust_vector.y = -2*motor_angle_factor;// H normal motor angle
+        	thrust_vector.y = -motor_angle_multiplier*motor_angle_factor;// H normal motor angle
         	// thrust_vector.y = motor_angle_multiplier*motor_angle_factor; // H reveresed motor angle
             // thrust_vector.y = -2*motor_angle_factor; // H wing motor angle
 
@@ -188,7 +187,7 @@ public:
 
             thrust_vector.x = -twist_angle_factor_sin;
 
-        	thrust_vector.y = -2*motor_angle_factor;// H normal motor angle
+        	thrust_vector.y = -motor_angle_multiplier*motor_angle_factor;// H normal motor angle
             // thrust_vector.y = motor_angle_multiplier*motor_angle_factor; // H reveresed motor angle
             // thrust_vector.y = -2*motor_angle_factor; // H wing motor angle
 
@@ -202,7 +201,7 @@ public:
 
             thrust_vector.x = twist_angle_factor_sin;
 
-        	thrust_vector.y = 2*motor_angle_factor;// H normal motor angle
+        	thrust_vector.y = motor_angle_multiplier*motor_angle_factor;// H normal motor angle
             // thrust_vector.y = -motor_angle_multiplier*motor_angle_factor; // H reveresed motor angle/
             // thrust_vector.y = 2*motor_angle_factor; // H wing motor angle/
 
