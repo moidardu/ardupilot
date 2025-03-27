@@ -200,57 +200,25 @@ static Motor octa_motors[] =
 
 */
 /* this is the CLASSIC OCTA H - change the yaw factor in SIM to match emperical results. front right boom goes down
+*/
 
 
 static Motor octa_motors[] =
 {
-    Motor(AP_MOTORS_MOT_1,    0,  AP_MOTORS_MATRIX_YAW_FACTOR_CW,  1), //right
-    Motor(AP_MOTORS_MOT_2,  180,  AP_MOTORS_MATRIX_YAW_FACTOR_CW,  5), //left 
-    Motor(AP_MOTORS_MOT_3,   45,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW, 2), //right 
-    Motor(AP_MOTORS_MOT_4,  135,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW, 4), //right
-    Motor(AP_MOTORS_MOT_5,  -45,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW, 8), //left
-    Motor(AP_MOTORS_MOT_6, -135,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW, 6), //left
-    Motor(AP_MOTORS_MOT_7,  -90,  AP_MOTORS_MATRIX_YAW_FACTOR_CW,  7), //left
-    Motor(AP_MOTORS_MOT_8,   90,  AP_MOTORS_MATRIX_YAW_FACTOR_CW,  3)  //rigth
-};
-                    */
-
-
-/*this is the REVERSED OCTA H 
-
-static Motor octa_motors[] =
-{
-    Motor(AP_MOTORS_MOT_1,    0,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,  1),
-    Motor(AP_MOTORS_MOT_2,  180,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,  5),
-    Motor(AP_MOTORS_MOT_3,   45,  AP_MOTORS_MATRIX_YAW_FACTOR_CW, 2),
-    Motor(AP_MOTORS_MOT_4,  135,  AP_MOTORS_MATRIX_YAW_FACTOR_CW, 4),
-    Motor(AP_MOTORS_MOT_5,  -45,  AP_MOTORS_MATRIX_YAW_FACTOR_CW, 8),
-    Motor(AP_MOTORS_MOT_6, -135,  AP_MOTORS_MATRIX_YAW_FACTOR_CW, 6),
-    Motor(AP_MOTORS_MOT_7,  -90,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,  7),
-    Motor(AP_MOTORS_MOT_8,   90,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,  3)
-};
-*/
-
-/*this is the REVERSED OCTA H - TEST TO MAKE SURE RADIAL VALUES OVERRIDED, well this causes chaos
-
-static Motor octa_motors[] =
-{
-    Motor(AP_MOTORS_MOT_1,    0,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,  1),
-    Motor(AP_MOTORS_MOT_2,  0,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,  5),
-    Motor(AP_MOTORS_MOT_3,   0,  AP_MOTORS_MATRIX_YAW_FACTOR_CW, 2),
-    Motor(AP_MOTORS_MOT_4,  0,  AP_MOTORS_MATRIX_YAW_FACTOR_CW, 4),
-    Motor(AP_MOTORS_MOT_5,  -0,  AP_MOTORS_MATRIX_YAW_FACTOR_CW, 8),
-    Motor(AP_MOTORS_MOT_6, -0,  AP_MOTORS_MATRIX_YAW_FACTOR_CW, 6),
-    Motor(AP_MOTORS_MOT_7,  -0,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,  7),
-    Motor(AP_MOTORS_MOT_8,   0,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,  3)
+    Motor(AP_MOTORS_MOT_1, 1,  AP_MOTORS_MATRIX_YAW_FACTOR_CW,  1),
+    Motor(AP_MOTORS_MOT_2, 2,  AP_MOTORS_MATRIX_YAW_FACTOR_CW,  5),
+    Motor(AP_MOTORS_MOT_3, 3,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,   2),
+    Motor(AP_MOTORS_MOT_4, 4,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,   4),
+    Motor(AP_MOTORS_MOT_5, 5,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,   8),
+    Motor(AP_MOTORS_MOT_6, 6,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,   6),
+    Motor(AP_MOTORS_MOT_7, 7,  AP_MOTORS_MATRIX_YAW_FACTOR_CW,  7),
+    Motor(AP_MOTORS_MOT_8, 8,  AP_MOTORS_MATRIX_YAW_FACTOR_CW,  3)
 };
 
 
-*/
 
 
-/*this is the REVERSED OCTA H - quasi realistic positions (angles correct, just that non-constant diagonal)
-*/
+/*this is the REVERSED OCTA H - complete over-ride of angles
 
 static Motor octa_motors[] =
 {
@@ -263,6 +231,7 @@ static Motor octa_motors[] =
     Motor(AP_MOTORS_MOT_7, 7,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,  7),
     Motor(AP_MOTORS_MOT_8, 8,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,  3)
 };
+*/
 
 /*this is the WING OCTA H 
 
