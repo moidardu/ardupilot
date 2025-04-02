@@ -50,7 +50,7 @@ public:
     // float twist_angle_factor_sin = 0.02; //twist factor for 1.1 degrees, PRE convergence - reverse H no motor angle, M1 loss
 
     // reveresed H octa values:
-    float twist_angle_factor_sin = 0.033; //twist factor for iterations
+    float twist_angle_factor_sin = 0.0; //twist factor for iterations
 
 
 
@@ -103,8 +103,8 @@ public:
 
         	thrust_vector.x = twist_angle_factor_sin;
 
-        	// thrust_vector.y = -motor_angle_factor; // H normal motor angle
-        	thrust_vector.y = motor_angle_factor; // H reveresed motor angle
+        	thrust_vector.y = -motor_angle_factor; // H normal motor angle
+        	// thrust_vector.y = motor_angle_factor; // H reveresed motor angle
             // thrust_vector.y = motor_angle_factor; // H wing motor angle
 
         	thrust_vector.z = -twist_angle_factor_cos;
@@ -117,7 +117,7 @@ public:
 
             thrust_vector.x = -twist_angle_factor_sin;
 
-        	// thrust_vector.y = motor_angle_factor;// H normal motor angle
+        	thrust_vector.y = motor_angle_factor;// H normal motor angle
         	thrust_vector.y = -motor_angle_factor; // H reveresed motor angle
             // thrust_vector.y = -motor_angle_factor; // H wing motor angle
 
@@ -131,8 +131,8 @@ public:
 
             thrust_vector.x = twist_angle_factor_sin;
 
-        	// thrust_vector.y = motor_angle_multiplier*motor_angle_factor;// H normal motor angle
-        	thrust_vector.y = -motor_angle_multiplier*motor_angle_factor; // H reveresed motor angle
+        	thrust_vector.y = motor_angle_multiplier*motor_angle_factor;// H normal motor angle
+        	// thrust_vector.y = -motor_angle_multiplier*motor_angle_factor; // H reveresed motor angle
             // thrust_vector.y = motor_angle_factor*motor_angle_factor; // H wing motor angle
 
         	thrust_vector.z = -twist_angle_factor_cos;
@@ -145,8 +145,8 @@ public:
 
             thrust_vector.x = twist_angle_factor_sin;
 
-        	// thrust_vector.y = -motor_angle_factor;// H normal motor angle
-        	thrust_vector.y = motor_angle_factor; // H reveresed motor angle
+        	thrust_vector.y = -motor_angle_factor;// H normal motor angle
+        	// thrust_vector.y = motor_angle_factor; // H reveresed motor angle
             // thrust_vector.y = motor_angle_factor; // H wing motor angle
 
         	thrust_vector.z = -twist_angle_factor_cos;
@@ -159,8 +159,8 @@ public:
 
             thrust_vector.x = -twist_angle_factor_sin;
 
-        	// thrust_vector.y = motor_angle_factor;// H normal motor angle
-        	thrust_vector.y = -motor_angle_factor; // H reveresed motor angle
+        	thrust_vector.y = motor_angle_factor;// H normal motor angle
+        	// thrust_vector.y = -motor_angle_factor; // H reveresed motor angle
             // thrust_vector.y = -motor_angle_factor; // H wing motor angle
 
         	thrust_vector.z = -twist_angle_factor_cos;
@@ -173,8 +173,8 @@ public:
 
             thrust_vector.x = -twist_angle_factor_sin;
 // 
-        	// thrust_vector.y = -motor_angle_multiplier*motor_angle_factor;// H normal motor angle
-        	thrust_vector.y = motor_angle_multiplier*motor_angle_factor; // H reveresed motor angle
+        	thrust_vector.y = -motor_angle_multiplier*motor_angle_factor;// H normal motor angle
+        	// thrust_vector.y = motor_angle_multiplier*motor_angle_factor; // H reveresed motor angle
             // thrust_vector.y = -motor_angle_factor*motor_angle_factor; // H wing motor angle
 
         	thrust_vector.z = -twist_angle_factor_cos;
@@ -187,8 +187,8 @@ public:
 
             thrust_vector.x = -twist_angle_factor_sin;
 
-        	// thrust_vector.y = -motor_angle_multiplier*motor_angle_factor;// H normal motor angle
-            thrust_vector.y = motor_angle_multiplier*motor_angle_factor; // H reveresed motor angle
+        	thrust_vector.y = -motor_angle_multiplier*motor_angle_factor;// H normal motor angle
+            // thrust_vector.y = motor_angle_multiplier*motor_angle_factor; // H reveresed motor angle
             // thrust_vector.y = -motor_angle_factor*motor_angle_factor; // H wing motor angle
 
         	thrust_vector.z = -twist_angle_factor_cos;
@@ -201,8 +201,8 @@ public:
 
             thrust_vector.x = twist_angle_factor_sin;
 
-        	// thrust_vector.y = motor_angle_multiplier*motor_angle_factor;// H normal motor angle
-            thrust_vector.y = -motor_angle_multiplier*motor_angle_factor; // H reveresed motor angle/
+        	thrust_vector.y = motor_angle_multiplier*motor_angle_factor;// H normal motor angle
+            // thrust_vector.y = -motor_angle_multiplier*motor_angle_factor; // H reveresed motor angle/
             // thrust_vector.y = motor_angle_factor*motor_angle_factor; // H wing motor angle/
 
         	thrust_vector.z = -twist_angle_factor_cos;
