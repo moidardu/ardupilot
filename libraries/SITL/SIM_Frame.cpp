@@ -200,7 +200,6 @@ static Motor octa_motors[] =
 
 */
 /* this is the CLASSIC OCTA H - change the yaw factor in SIM to match emperical results. front right boom goes down
-*/
 
 
 static Motor octa_motors[] =
@@ -214,6 +213,7 @@ static Motor octa_motors[] =
     Motor(AP_MOTORS_MOT_7, 7,  AP_MOTORS_MATRIX_YAW_FACTOR_CW,  7),
     Motor(AP_MOTORS_MOT_8, 8,  AP_MOTORS_MATRIX_YAW_FACTOR_CW,  3)
 };
+*/
 
 
 
@@ -234,19 +234,18 @@ static Motor octa_motors[] =
 */
 
 /*this is the WING OCTA H 
-
+*/
 static Motor octa_motors[] =
 {
-    Motor(AP_MOTORS_MOT_1,    0,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,  1),
-    Motor(AP_MOTORS_MOT_2,  180,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,  5),
-    Motor(AP_MOTORS_MOT_3,   45,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW, 2),
-    Motor(AP_MOTORS_MOT_4,  135,  AP_MOTORS_MATRIX_YAW_FACTOR_CW, 4),
-    Motor(AP_MOTORS_MOT_5,  -45,  AP_MOTORS_MATRIX_YAW_FACTOR_CW, 8),
-    Motor(AP_MOTORS_MOT_6, -135,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW, 6),
-    Motor(AP_MOTORS_MOT_7,  -90,  AP_MOTORS_MATRIX_YAW_FACTOR_CW,  7),
-    Motor(AP_MOTORS_MOT_8,   90,  AP_MOTORS_MATRIX_YAW_FACTOR_CW,  3)
+    Motor(AP_MOTORS_MOT_1, 1,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,  1),
+    Motor(AP_MOTORS_MOT_2, 2,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,  5),
+    Motor(AP_MOTORS_MOT_3, 3,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,   2),
+    Motor(AP_MOTORS_MOT_4, 4,  AP_MOTORS_MATRIX_YAW_FACTOR_CW,   4),
+    Motor(AP_MOTORS_MOT_5, 5,  AP_MOTORS_MATRIX_YAW_FACTOR_CW,   8),
+    Motor(AP_MOTORS_MOT_6, 6,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,   6),
+    Motor(AP_MOTORS_MOT_7, 7,  AP_MOTORS_MATRIX_YAW_FACTOR_CW,  7),
+    Motor(AP_MOTORS_MOT_8, 8,  AP_MOTORS_MATRIX_YAW_FACTOR_CW,  3)
 };
-*/
 
 
 static Motor octa_dji_x_motors[] =
