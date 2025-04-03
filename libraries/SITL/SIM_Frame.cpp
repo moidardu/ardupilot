@@ -200,7 +200,6 @@ static Motor octa_motors[] =
 
 */
 /* this is the CLASSIC OCTA H - change the yaw factor in SIM to match emperical results. front right boom goes down
-*/
 
 
 static Motor octa_motors[] =
@@ -215,10 +214,12 @@ static Motor octa_motors[] =
     Motor(AP_MOTORS_MOT_8, 8,  AP_MOTORS_MATRIX_YAW_FACTOR_CW,  3)
 };
 
+*/
 
 
 
 /*this is the REVERSED OCTA H - complete over-ride of angles
+*/
 
 static Motor octa_motors[] =
 {
@@ -231,7 +232,6 @@ static Motor octa_motors[] =
     Motor(AP_MOTORS_MOT_7, 7,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,  7),
     Motor(AP_MOTORS_MOT_8, 8,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW,  3)
 };
-*/
 
 /*this is the WING OCTA H 
 static Motor octa_motors[] =

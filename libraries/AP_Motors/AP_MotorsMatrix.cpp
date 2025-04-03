@@ -923,7 +923,6 @@ bool AP_MotorsMatrix::setup_octa_matrix(motor_frame_type frame_type)
             */
         
     /* This is the octa H - motors positions we have
-                */
 
     case MOTOR_FRAME_TYPE_H: {
         _frame_type_string = "H";
@@ -939,9 +938,11 @@ bool AP_MotorsMatrix::setup_octa_matrix(motor_frame_type frame_type)
         };
         add_motors_raw(motors, ARRAY_SIZE(motors));
         break;
+                */
 
 
     /* This is the REVERSED octa H
+                    */
 
     case MOTOR_FRAME_TYPE_H: {
         _frame_type_string = "H";
@@ -952,12 +953,11 @@ bool AP_MotorsMatrix::setup_octa_matrix(motor_frame_type frame_type)
             { -0.4f,   -1.0f, AP_MOTORS_MATRIX_YAW_FACTOR_CW, 4 },
             {  0.4f,    1.0f, AP_MOTORS_MATRIX_YAW_FACTOR_CW, 8 },
             {  0.4f,  -0.43f, AP_MOTORS_MATRIX_YAW_FACTOR_CW, 6 },
-            {  0.4f,   0.43f, AP_MOTORS_MATRIX_YAW_FACTOR_CCW-,  7 },
+            {  0.4f,   0.43f, AP_MOTORS_MATRIX_YAW_FACTOR_CCW,  7 },
             { -0.4f,  -0.43f, AP_MOTORS_MATRIX_YAW_FACTOR_CCW,  3 },
         };
         add_motors_raw(motors, ARRAY_SIZE(motors));
         break;
-                    */
 
 
     /* This is the WING H
