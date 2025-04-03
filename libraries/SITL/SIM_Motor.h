@@ -57,8 +57,8 @@ public:
     // float motor_angle_factor = 0.00; // ~ 0 degree motor angled in/out
     // 
     float motor_angle_factor = 0.05; // ~ 3 degree motor angled in/out, multiple of 2 for 6 deg
-    float motor_angle_multiplier = 1/0.43;
-    // float motor_angle_multiplier = 2;
+    // float motor_angle_multiplier = 1/0.43; //factor of ~2.3, i.e. 7 degrees
+    float motor_angle_multiplier = 3.4;
 
     //float motor_angle_factor = 0.17; // ~ 10 degree motor angled in/out, multiple of 2 for 20 deg
 
