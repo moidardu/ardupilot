@@ -50,13 +50,15 @@ public:
     // float twist_angle_factor_sin = 0.02; //twist factor for 1.1 degrees, PRE convergence - reverse H no motor angle, M1 loss
 
     // reveresed H octa values:
-    float twist_angle_factor_sin = 0.019; //twist factor in frame
+    // float twist_angle_factor_sin = 0.019; //twist factor in frame
+    float twist_angle_factor_sin = 0.00; //twist factor in frame
+
+    float p_out_compensation_dist = 0.05; 
 
 
-
-    // float motor_angle_factor = 0.00; // ~ 0 degree motor angled in/out
+    float motor_angle_factor = 0.00; // ~ 0 degree motor angled in/out
     // 
-    float motor_angle_factor = 0.012; // motor angle factor for uniform yaw bias, Y.Out is from exp. is 0.14, this correlates to 0.7 degrees
+    // float motor_angle_factor = 0.012; // motor angle factor for uniform yaw bias, Y.Out is from exp. is 0.14, this correlates to 0.7 degrees
     // float motor_angle_multiplier = 1/0.43; //factor of ~2.3, i.e. 7 degrees
     float motor_angle_multiplier = 0;
 
@@ -97,7 +99,7 @@ public:
 
 // /*
     	if (_display_order ==1){ //motor 1
-    	    position.x = 1;
+    	    position.x = 1+p_out_compensation_dist;
         	position.y =  0.4;
         	position.z = 0;
 
@@ -113,7 +115,7 @@ public:
         }
         
     	else if (_display_order ==5){ //motor 2
-    	    position.x = -1;
+    	    position.x = -1+p_out_compensation_dist;
         	position.y =  -0.4;
         	position.z = 0;
 
@@ -128,7 +130,7 @@ public:
         }
         
         else if (_display_order ==2){ //motor 3
-    	    position.x = 0.43;
+    	    position.x = 0.43+p_out_compensation_dist;
         	position.y =  0.4;
         	position.z = 0;
 
@@ -143,7 +145,7 @@ public:
         }
         
         else if (_display_order ==4){ //motor 4
-    	    position.x = -1;
+    	    position.x = -1+p_out_compensation_dist;
         	position.y = 0.4;
         	position.z = 0;
 
@@ -158,7 +160,7 @@ public:
         }
         
         else if (_display_order ==8){ //motor 5
-    	    position.x = 1;
+    	    position.x = 1+p_out_compensation_dist;
         	position.y =  -0.4;
         	position.z = 0;
 
@@ -173,7 +175,7 @@ public:
         }
         
         else if (_display_order ==6){ //motor 6
-    	    position.x = -0.43;
+    	    position.x = -0.43+p_out_compensation_dist;
         	position.y =  -0.4;
         	position.z = 0;
 
@@ -188,7 +190,7 @@ public:
         }
         
         else if (_display_order ==7){ //motor 7
-    	    position.x = 0.43;
+    	    position.x = 0.43+p_out_compensation_dist;
         	position.y =  -0.4;
         	position.z = 0;
 
@@ -203,7 +205,7 @@ public:
         }
         
         else { //motor 8
-    	    position.x = -0.43;
+    	    position.x = -0.43+p_out_compensation_dist;
         	position.y =  0.4;
         	position.z = 0;
 
