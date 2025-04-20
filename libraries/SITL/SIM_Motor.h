@@ -50,10 +50,10 @@ public:
     // float twist_angle_factor_sin = 0.02; //twist factor for 1.1 degrees, PRE convergence - reverse H no motor angle, M1 loss
 
     // reveresed H octa values:
-    // float twist_angle_factor_sin = 0.012; //twist factor in frame
-    float twist_angle_factor_sin = 0.00; //twist factor in frame
+    float twist_angle_factor_sin = 0.012; //twist factor in frame
+    // float twist_angle_factor_sin = 0.00; //twist factor in frame
 
-    float p_out_compensation_dist = 0.06; 
+    float p_out_compensation_dist = 0.0; 
 
 
     // float motor_angle_factor = 0.00; // ~ 0 degree motor angled in/out
