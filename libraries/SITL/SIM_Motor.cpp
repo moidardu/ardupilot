@@ -189,7 +189,7 @@ void Motor::setup_params(uint16_t _pwm_min, uint16_t _pwm_max, float _spin_min, 
         
         if (int(angle) == 1) //motor 1
         {
-            position.x = 1 + 0.06;
+            position.x = 1 + 0.0000;
         	position.y =  0.4;
         	position.z = 0;
         }
@@ -197,43 +197,43 @@ void Motor::setup_params(uint16_t _pwm_min, uint16_t _pwm_max, float _spin_min, 
  
         else if (int(angle) == 2) //motor 2
         {
-    	    position.x = -1+ 0.06;
+    	    position.x = -1+ 0.0000;
         	position.y =  -0.4;
         	position.z = 0;
         }
         else if (int(angle) == 3)//motor 3
         {
-    	    position.x = 0.43+ 0.06;
+    	    position.x = 0.43+ 0.0000;
         	position.y =  0.4;
         	position.z = 0;
         }
         else if (int(angle) == 4) //motor 4
         {
-    	    position.x = -1+ 0.06;
+    	    position.x = -1+ 0.0000;
         	position.y = 0.4;
         	position.z = 0;
         }
         else if (int(angle) == 5) //motor 5
         {
-    	    position.x = 1+ 0.06;
+    	    position.x = 1+ 0.0000;
         	position.y =  -0.4;
         	position.z = 0;
         }
         else if (int(angle) == 6) //motor 6
         {
-    	    position.x = -0.43+ 0.06;
+    	    position.x = -0.43+ 0.0000;
         	position.y =  -0.4;
         	position.z = 0;
         }
         else if (int(angle) == 7) //motor 7
         {
-    	    position.x = 0.43+ 0.06;
+    	    position.x = 0.43+ 0.0000;
         	position.y =  -0.4;
         	position.z = 0;
         }
         else if(int(angle) == 8) //motor 8
         {
-    	    position.x = -0.43+ 0.06;
+    	    position.x = -0.43+ 0.0000;
         	position.y =  0.4;
         	position.z = 0;
 

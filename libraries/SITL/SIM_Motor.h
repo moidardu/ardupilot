@@ -53,7 +53,7 @@ public:
     float twist_angle_factor_sin = 0.019; //twist factor in frame
     // float twist_angle_factor_sin = 0.00; //twist factor in frame
 
-    float p_out_compensation_dist = 0.06; 
+    float p_out_compensation_dist = 0.00; 
 
 
     // float motor_angle_factor = 0.00; // ~ 0 degree motor angled in/out
