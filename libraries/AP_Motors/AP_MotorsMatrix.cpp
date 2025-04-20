@@ -446,7 +446,7 @@ void AP_MotorsMatrix::check_for_failed_motor(float throttle_thrust_best_plus_adj
         thrust_balance = rpyt_high * number_motors / rpyt_sum;
     }
     // ensure thrust balance does not activate for multirotors with less than 6 motors
-    if (number_motors >= 6 && thrust_balance >= 1.5f && _thrust_balanced) {
+    if (number_motors >= 6 && thrust_balance >= 2.5f && _thrust_balanced) {
         _thrust_balanced = false;
     }
     if (thrust_balance <= 1.25f && !_thrust_balanced) {
