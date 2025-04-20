@@ -50,8 +50,8 @@ public:
     // float twist_angle_factor_sin = 0.02; //twist factor for 1.1 degrees, PRE convergence - reverse H no motor angle, M1 loss
 
     // reveresed H octa values:
-    float twist_angle_factor_sin = 0.012; //twist factor in frame
-    // float twist_angle_factor_sin = 0.00; //twist factor in frame
+    // float twist_angle_factor_sin = 0.012; //twist factor in frame
+    float twist_angle_factor_sin = 0.00; //twist factor in frame
 
     float p_out_compensation_dist = 0.06; 
 
@@ -59,7 +59,7 @@ public:
     // float motor_angle_factor = 0.00; // ~ 0 degree motor angled in/out
     // 
     float motor_angle_factor = 0.0183; // motor angle factor for uniform yaw bias, Y.Out is from exp. is 0.14, this correlates to 0.7 degrees
-    float motor_angle_factor_motor_loss_variance = 2.5*motor_angle_factor; //i.e. motor 6 has 0.8 deg, but motor 4 has 0.6
+    float motor_angle_factor_motor_loss_variance = 3.55*motor_angle_factor; //i.e. motor 6 has 0.8 deg, but motor 4 has 0.6
     // float motor_angle_multiplier = 1/0.43; //factor of ~2.3, i.e. 7 degrees
     float motor_angle_multiplier = 0;
 
