@@ -60,8 +60,8 @@ public:
     // 
     float motor_angle_factor = 0.035; // 2 + 4 degrees, base motor angle
     
-    float motor_angle_adverse_yaw_factor = 0.02; // motor angle factor for uniform yaw bias, Y.Out is from exp. is 0.14, this correlates to 0.7 degrees
-    float motor_angle_factor_motor_loss_variance = 0*3.55*motor_angle_factor; //i.e. motor 6 has 0.8 deg, but motor 4 has 0.6
+    float motor_angle_adverse_yaw_factor = 0.015; // motor angle factor for uniform yaw bias, Y.Out is from exp. is 0.14, this correlates to 0.7 degrees
+    float motor_angle_factor_motor_loss_variance = 0*3.55*motor_angle_adverse_yaw_factor; //i.e. motor 6 has 0.8 deg, but motor 4 has 0.6
     // float motor_angle_multiplier = 1/0.43; //factor of ~2.3, i.e. 7 degrees
     float motor_angle_multiplier = 2;
 
@@ -111,7 +111,7 @@ public:
         	// thrust_vector.y = -motor_angle_factor; // H normal motor angle
         	// thrust_vector.y = motor_angle_factor; // H reveresed motor angle
             // thrust_vector.y = motor_angle_factor; // H wing motor angle
-            thrust_vector.y = -motor_angle_factor ; // H normal motor angle - fitting to exp results
+            thrust_vector.y = -motor_angle_factor +motor_angle_adverse_yaw_factor; // H normal motor angle - fitting to exp results
 
 
         	thrust_vector.z = -twist_angle_factor_cos;
@@ -127,7 +127,7 @@ public:
         	// thrust_vector.y = motor_angle_factor;// H normal motor angle
         	// thrust_vector.y = -motor_angle_factor; // H reveresed motor angle
             // thrust_vector.y = -motor_angle_factor; // H wing motor angle
-            thrust_vector.y = motor_angle_factor; // H normal motor angle - fitting to exp results
+            thrust_vector.y = motor_angle_factor -motor_angle_adverse_yaw_factor; // H normal motor angle - fitting to exp results
 
         	thrust_vector.z = -twist_angle_factor_cos;
         }
@@ -142,7 +142,7 @@ public:
         	// thrust_vector.y = motor_angle_multiplier*motor_angle_factor;// H normal motor angle
         	// thrust_vector.y = -motor_angle_multiplier*motor_angle_factor; // H reveresed motor angle
             // thrust_vector.y = motor_angle_factor*motor_angle_factor; // H wing motor angle
-            thrust_vector.y = motor_angle_multiplier*motor_angle_factor; // H normal motor angle - fitting to exp results
+            thrust_vector.y = motor_angle_multiplier*motor_angle_factor+motor_angle_adverse_yaw_factor; // H normal motor angle - fitting to exp results
 
         	thrust_vector.z = -twist_angle_factor_cos;
         }
@@ -157,7 +157,7 @@ public:
         	// thrust_vector.y = -motor_angle_factor;// H normal motor angle
         	// thrust_vector.y = motor_angle_factor; // H reveresed motor angle
             // thrust_vector.y = motor_angle_factor; // H wing motor angle
-            thrust_vector.y = -motor_angle_factor; // H normal motor angle - fitting to exp results
+            thrust_vector.y = -motor_angle_factor-motor_angle_adverse_yaw_factor; // H normal motor angle - fitting to exp results
 
         	thrust_vector.z = -twist_angle_factor_cos;
         }
@@ -172,7 +172,7 @@ public:
         	// thrust_vector.y = motor_angle_factor;// H normal motor angle
         	// thrust_vector.y = -motor_angle_factor; // H reveresed motor angle
             // thrust_vector.y = -motor_angle_factor; // H wing motor angle
-            thrust_vector.y = motor_angle_factor; // H normal motor angle - fitting to exp results
+            thrust_vector.y = motor_angle_factor+motor_angle_adverse_yaw_factor; // H normal motor angle - fitting to exp results
 
         	thrust_vector.z = -twist_angle_factor_cos;
         }
@@ -187,7 +187,7 @@ public:
         	// thrust_vector.y = -motor_angle_multiplier*motor_angle_factor;// H normal motor angle
         	// thrust_vector.y = motor_angle_multiplier*motor_angle_factor; // H reveresed motor angle
             // thrust_vector.y = -motor_angle_factor*motor_angle_factor; // H wing motor angle
-            thrust_vector.y =  -motor_angle_multiplier*motor_angle_factor; // H normal motor angle - fitting to exp results
+            thrust_vector.y =  -motor_angle_multiplier*motor_angle_factor-motor_angle_adverse_yaw_factor; // H normal motor angle - fitting to exp results
 
         	thrust_vector.z = -twist_angle_factor_cos;
         }
@@ -202,7 +202,7 @@ public:
         	// thrust_vector.y = -motor_angle_multiplier*motor_angle_factor;// H normal motor angle
             // thrust_vector.y = motor_angle_multiplier*motor_angle_factor; // H reveresed motor angle
             // thrust_vector.y = -motor_angle_factor*motor_angle_factor; // H wing motor angle
-            thrust_vector.y = -motor_angle_multiplier*motor_angle_factor; // H normal motor angle - fitting to exp results
+            thrust_vector.y = -motor_angle_multiplier*motor_angle_factor+motor_angle_adverse_yaw_factor; // H normal motor angle - fitting to exp results
 
         	thrust_vector.z = -twist_angle_factor_cos;
         }
@@ -217,7 +217,7 @@ public:
         	// thrust_vector.y = motor_angle_multiplier*motor_angle_factor;// H normal motor angle
             // thrust_vector.y = -motor_angle_multiplier*motor_angle_factor; // H reveresed motor angle/
             // thrust_vector.y = motor_angle_factor*motor_angle_factor; // H wing motor angle/
-            thrust_vector.y = motor_angle_multiplier*motor_angle_factor; // H normal motor angle - fitting to exp results
+            thrust_vector.y = motor_angle_multiplier*motor_angle_factor-motor_angle_adverse_yaw_factor; // H normal motor angle - fitting to exp results
 
         	thrust_vector.z = -twist_angle_factor_cos;
         }
