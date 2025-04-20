@@ -109,7 +109,7 @@ public:
         	// thrust_vector.y = -motor_angle_factor; // H normal motor angle
         	// thrust_vector.y = motor_angle_factor; // H reveresed motor angle
             // thrust_vector.y = motor_angle_factor; // H wing motor angle
-            thrust_vector.y = -motor_angle_factor; // H normal motor angle - fitting to exp results
+            thrust_vector.y = -motor_angle_factor -motor_angle_factor_motor_loss_variance; // H normal motor angle - fitting to exp results
 
 
         	thrust_vector.z = -twist_angle_factor_cos;
@@ -170,7 +170,7 @@ public:
         	// thrust_vector.y = motor_angle_factor;// H normal motor angle
         	// thrust_vector.y = -motor_angle_factor; // H reveresed motor angle
             // thrust_vector.y = -motor_angle_factor; // H wing motor angle
-            thrust_vector.y = -motor_angle_factor; // H normal motor angle - fitting to exp results
+            thrust_vector.y = -motor_angle_factor+motor_angle_factor_motor_loss_variance; // H normal motor angle - fitting to exp results
 
         	thrust_vector.z = -twist_angle_factor_cos;
         }
