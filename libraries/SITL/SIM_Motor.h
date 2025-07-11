@@ -50,17 +50,17 @@ public:
     // float twist_angle_factor_sin = 0.02; //twist factor for 1.1 degrees, PRE convergence - reverse H no motor angle, M1 loss
 
     // reveresed H octa values:
-    float twist_angle_factor_sin = 0.019; //twist factor in frame
-    // float twist_angle_factor_sin = 0.00; //twist factor in frame
+    // float twist_angle_factor_sin = 0.019; //twist factor in frame
+    float twist_angle_factor_sin = 0.00; //twist factor in frame
 
     float p_out_compensation_dist = 0.00; 
 
 
     // float motor_angle_factor = 0.00; // ~ 0 degree motor angled in/out
     // 
-    float motor_angle_factor = 0.035; // 2 + 4 degrees, base motor angle
+    float motor_angle_factor = 0*0.035; // 2 + 4 degrees, base motor angle
     
-    float motor_angle_adverse_yaw_factor = 0.017; // motor angle factor for uniform yaw bias, Y.Out is from exp. is 0.14, this correlates to 0.7 degrees
+    float motor_angle_adverse_yaw_factor = 0*0.017; // motor angle factor for uniform yaw bias, Y.Out is from exp. is 0.14, this correlates to 0.7 degrees
     float motor_angle_factor_motor_loss_variance = 0*3.55*motor_angle_adverse_yaw_factor; //i.e. motor 6 has 0.8 deg, but motor 4 has 0.6
     // float motor_angle_multiplier = 1/0.43; //factor of ~2.3, i.e. 7 degrees
     float motor_angle_multiplier = 2;
@@ -426,55 +426,57 @@ public:
   
   
   
-       /* twist angle interplay 
-    	if (_display_order ==1){
-        	thrust_vector.x = twist_angle_factor_sin;
-        	thrust_vector.y = 1;
-        	thrust_vector.z = -twist_angle_factor_cos;
+     twist angle interplay 
+        if (_display_order ==1){
+            thrust_vector.x = twist_angle_factor_sin;
+            thrust_vector.y = 1;
+            thrust_vector.z = -twist_angle_factor_cos;
         }
         
-    	else if (_display_order ==5){
-        	thrust_vector.x = -twist_angle_factor_sin;
-        	thrust_vector.y = 0;
-        	thrust_vector.z = -twist_angle_factor_cos;
+        else if (_display_order ==5){
+            thrust_vector.x = -twist_angle_factor_sin;
+            thrust_vector.y = 0;
+            thrust_vector.z = -twist_angle_factor_cos;
         }
         
         else if (_display_order ==2){
-        	thrust_vector.x = twist_angle_factor_sin;
-        	thrust_vector.y = 0;
-        	thrust_vector.z = -twist_angle_factor_cos;
+            thrust_vector.x = twist_angle_factor_sin;
+            thrust_vector.y = 0;
+            thrust_vector.z = -twist_angle_factor_cos;
         }
         
         else if (_display_order ==4){
-        	thrust_vector.x = twist_angle_factor_sin;
-        	thrust_vector.y = 0;
-        	thrust_vector.z = -twist_angle_factor_cos;
+            thrust_vector.x = twist_angle_factor_sin;
+            thrust_vector.y = 0;
+            thrust_vector.z = -twist_angle_factor_cos;
         }
         
         else if (_display_order ==8){
-        	thrust_vector.x = twist_angle_factor_sin;
-        	thrust_vector.y = 0;
-        	thrust_vector.z = -twist_angle_factor_cos;
+            thrust_vector.x = twist_angle_factor_sin;
+            thrust_vector.y = 0;
+            thrust_vector.z = -twist_angle_factor_cos;
         }
         
         else if (_display_order ==6){
-        	thrust_vector.x = -twist_angle_factor_sin;
-        	thrust_vector.y = 0;
-        	thrust_vector.z = -twist_angle_factor_cos;
+            thrust_vector.x = -twist_angle_factor_sin;
+            thrust_vector.y = 0;
+            thrust_vector.z = -twist_angle_factor_cos;
         }
         
         else if (_display_order ==7){
-        	thrust_vector.x = -twist_angle_factor_sin;
-        	thrust_vector.y = 0;
-        	thrust_vector.z = -twist_angle_factor_cos;
+            thrust_vector.x = -twist_angle_factor_sin;
+            thrust_vector.y = 0;
+            thrust_vector.z = -twist_angle_factor_cos;
         }
         
         else {
-        	thrust_vector.x = -twist_angle_factor_sin;
-        	thrust_vector.y = 0;
-        	thrust_vector.z = -twist_angle_factor_cos;
-        }  
-   */
+            thrust_vector.x = -twist_angle_factor_sin;
+            thrust_vector.y = 0;
+            thrust_vector.z = -twist_angle_factor_cos;
+       }  
+*/
+
+
 
     }
 
