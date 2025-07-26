@@ -324,7 +324,7 @@ static Frame supported_frames[] =
     Frame("tilttri",   3, tilttri_motors),
     Frame("y6",        6, y6_motors),
     Frame("firefly",   6, firefly_motors),
-    Frame("octa-h",   6, octa_h_motors)
+    Frame("octa-h",   8, octa_h_motors)
 };
 
 // get air density in kg/m^3
