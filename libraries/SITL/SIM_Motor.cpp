@@ -191,7 +191,7 @@ void Motor::setup_params(uint16_t _pwm_min, uint16_t _pwm_max, float _spin_min, 
         {
             position.x = 1 + p_out_compensation_dist;
         	position.y =  0.4;
-        	position.z = 0;
+        	position.z = z_offset_motors_to_cg;
         }
  
  
@@ -199,46 +199,46 @@ void Motor::setup_params(uint16_t _pwm_min, uint16_t _pwm_max, float _spin_min, 
         {
     	    position.x = -1+ p_out_compensation_dist;
         	position.y =  -0.4;
-        	position.z = 0;
+        	position.z = z_offset_motors_to_cg;
         }
         else if (int(angle) == 3)//motor 3
         {
     	    position.x = 0.43+ p_out_compensation_dist;
         	position.y =  0.4;
-        	position.z = 0;
+        	position.z = z_offset_motors_to_cg;
         }
         else if (int(angle) == 4) //motor 4
         {
     	    position.x = -1+ p_out_compensation_dist;
         	position.y = 0.4;
-        	position.z = 0;
+        	position.z = z_offset_motors_to_cg;
         }
         else if (int(angle) == 5) //motor 5
         {
     	    position.x = 1+ p_out_compensation_dist;
         	position.y =  -0.4;
-        	position.z = 0;
+        	position.z = z_offset_motors_to_cg;
         }
         else if (int(angle) == 6) //motor 6
         {
     	    position.x = -0.43+ p_out_compensation_dist;
         	position.y =  -0.4;
-        	position.z = 0;
+        	position.z = z_offset_motors_to_cg;
         }
         else if (int(angle) == 7) //motor 7
         {
     	    position.x = 0.43+ p_out_compensation_dist;
         	position.y =  -0.4;
-        	position.z = 0;
+        	position.z = z_offset_motors_to_cg;
         }
         else if(int(angle) == 8) //motor 8
         {
     	    position.x = -0.43+ p_out_compensation_dist;
         	position.y =  0.4;
-        	position.z = 0;
+        	position.z = z_offset_motors_to_cg;
 
         }
-        position.z = 0;
+        position.z = z_offset_motors_to_cg;
  
         
     }

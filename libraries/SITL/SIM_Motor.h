@@ -54,6 +54,7 @@ public:
     float twist_angle_factor_sin = 0.00; //twist factor in frame
 
     float p_out_compensation_dist = 0.00; 
+    float z_offset_motors_to_cg = -0.5; // offset of motors to CG in z direction, in relation to unit radius
 
 
     // float motor_angle_factor = 0.00; // ~ 0 degree motor angled in/out
@@ -104,7 +105,7 @@ public:
     	if (_display_order ==1){ //motor 1
     	    position.x = 1+p_out_compensation_dist;
         	position.y =  0.4;
-        	position.z = 0;
+        	position.z = z_offset_motors_to_cg;
 
         	thrust_vector.x = twist_angle_factor_sin;
 
@@ -120,7 +121,7 @@ public:
     	else if (_display_order ==5){ //motor 2
     	    position.x = -1+p_out_compensation_dist;
         	position.y =  -0.4;
-        	position.z = 0;
+        	position.z = z_offset_motors_to_cg;
 
             thrust_vector.x = -twist_angle_factor_sin;
 
@@ -135,7 +136,7 @@ public:
         else if (_display_order ==2){ //motor 3
     	    position.x = 0.43+p_out_compensation_dist;
         	position.y =  0.4;
-        	position.z = 0;
+        	position.z = z_offset_motors_to_cg;
 
             thrust_vector.x = twist_angle_factor_sin;
 
@@ -150,7 +151,7 @@ public:
         else if (_display_order ==4){ //motor 4
     	    position.x = -1+p_out_compensation_dist;
         	position.y = 0.4;
-        	position.z = 0;
+        	position.z = z_offset_motors_to_cg;
 
             thrust_vector.x = twist_angle_factor_sin;
 
@@ -165,7 +166,7 @@ public:
         else if (_display_order ==8){ //motor 5
     	    position.x = 1+p_out_compensation_dist;
         	position.y =  -0.4;
-        	position.z = 0;
+        	position.z = z_offset_motors_to_cg;
 
             thrust_vector.x = -twist_angle_factor_sin;
 
@@ -180,7 +181,7 @@ public:
         else if (_display_order ==6){ //motor 6
     	    position.x = -0.43+p_out_compensation_dist;
         	position.y =  -0.4;
-        	position.z = 0;
+        	position.z = z_offset_motors_to_cg;
 
             thrust_vector.x = -twist_angle_factor_sin;
 // 
@@ -195,7 +196,7 @@ public:
         else if (_display_order ==7){ //motor 7
     	    position.x = 0.43+p_out_compensation_dist;
         	position.y =  -0.4;
-        	position.z = 0;
+        	position.z = z_offset_motors_to_cg;
 
             thrust_vector.x = -twist_angle_factor_sin;
 
@@ -210,7 +211,7 @@ public:
         else { //motor 8
     	    position.x = -0.43+p_out_compensation_dist;
         	position.y =  0.4;
-        	position.z = 0;
+        	position.z = z_offset_motors_to_cg;
 
             thrust_vector.x = twist_angle_factor_sin;
 
