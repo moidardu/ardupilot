@@ -278,6 +278,21 @@ static Motor firefly_motors[] =
 };
 
 /*
+octa_h frame 
+ */
+static Motor octa_h_motors[] =
+{
+    Motor(AP_MOTORS_MOT_1,    0,  AP_MOTORS_MATRIX_YAW_FACTOR_CW,  1),
+    Motor(AP_MOTORS_MOT_2,  180,  AP_MOTORS_MATRIX_YAW_FACTOR_CW,  5),
+    Motor(AP_MOTORS_MOT_3,   45,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW, 2),
+    Motor(AP_MOTORS_MOT_4,  135,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW, 4),
+    Motor(AP_MOTORS_MOT_5,  -45,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW, 8),
+    Motor(AP_MOTORS_MOT_6, -135,  AP_MOTORS_MATRIX_YAW_FACTOR_CCW, 6),
+    Motor(AP_MOTORS_MOT_7,  -90,  AP_MOTORS_MATRIX_YAW_FACTOR_CW,  7),
+    Motor(AP_MOTORS_MOT_8,   90,  AP_MOTORS_MATRIX_YAW_FACTOR_CW,  3)
+};
+
+/*
   table of supported frame types. String order is important for
   partial name matching
  */
@@ -308,7 +323,8 @@ static Frame supported_frames[] =
     Frame("tilttrivec",3, tilttri_vectored_motors),
     Frame("tilttri",   3, tilttri_motors),
     Frame("y6",        6, y6_motors),
-    Frame("firefly",   6, firefly_motors)
+    Frame("firefly",   6, firefly_motors),
+    Frame("octa-h",   6, octa_h_motors)
 };
 
 // get air density in kg/m^3

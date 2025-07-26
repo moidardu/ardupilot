@@ -263,7 +263,7 @@ class VehicleInfo(object):
             },
             "octaplane_h": {#my own frame for testing
                 "waf_target": "bin/arduplane",
-                "default_params_filename": "default_params/quadplane.parm",
+                "default_params_filename": "default_params/octaplane_h.parm",
             },
             "quadplane-ice": {
                 "waf_target": "bin/arduplane",
