@@ -106,7 +106,7 @@ protected:
     float launch_time;
     uint64_t launch_start_ms;
 
-    const uint8_t throttle_servo = 2;
+    const uint8_t throttle_servo = 10;
     const int8_t choke_servo = 14;
     const int8_t ignition_servo = 12;
     const int8_t starter_servo = 13;

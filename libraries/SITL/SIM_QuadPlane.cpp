@@ -134,14 +134,15 @@ void QuadPlane::update(const struct sitl_input &input)
 
     float throttle;
     if (reverse_thrust) {
-        throttle = filtered_servo_angle(input, 2);
+        throttle = filtered_servo_angle(input, 10);
     } else {
-        throttle = filtered_servo_range(input, 2);
+        throttle = filtered_servo_range(input, 10);
     }
     // assume 20A at full fwd throttle
     throttle = fabsf(throttle);
     battery_current += 20 * throttle;
     
+    fprintf(stderr, "Throttle input from servo11: %f\n", throttle); //debugging output
     rot_accel += quad_rot_accel;
     accel_body += quad_accel_body;
 
